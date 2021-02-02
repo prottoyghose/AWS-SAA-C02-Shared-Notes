@@ -1,0 +1,541 @@
+1.  What scenarios are good for Global Accelerator?
+    Answer: Non HTTP use cases such as Gaming (UDP), IOT, VOIP.
+2.  How can we audit the values of an encrypted key?
+    Answer: AWS SSM Parameter Store.
+3.  What are two unique features about Transit Gateway?
+    Answer: You can share it through RAM (Resource Access Manager) and it also supports IP-Multicast.
+4.  What is AWS SAM?
+    Answer: Serverless Application Model
+            Purpose:
+                - Tets, package, and deploy serverless apps.
+5.  Which services do WAF support?
+    Answer: Application Load Balancer, Cloudfront, API Gateway, Appsync
+6.  Fargate supports which Docker Registries?
+    Answer: Docker HUB and ECR.
+7.  What are the valid origins of a CDN distribution?
+    Answer: S3, ELB, EC2, Route53, NON AWS.
+8.  RDS point-in-time store rules?
+    Answer: Default security group is attached, You can restore up to last 5 minutes.
+9.  What is the size of S3 Bucket policy?
+    Answer: 20 KB
+10. What is the default and maximum data retention period of Kinesis Data Stream
+    Answer: Default: 24 HRS, Maximum: 365 days
+11. Route53 Alias record works with?
+    Answer: ELB, CloudFront Distribution, S3 Website, Beanstalk, API Gateway, Interface Endpoints.
+12. What does Guardduty Monitors?
+    Answer: VPC flow logs, DNS logs, Cloudtrail Logs.
+13. What are the allowed formats for S3 static website?
+    Answer: http://bucket-name.s3-website.region.amazonaws.com, http://bucket-name.s3-website-region.amazonaws.com
+14. Elastic Beanstalk doesn't work with which service?
+    Answer: Lambda
+15. Is S3 Glacier compatible with Athena?
+    Answer: No.
+16. Is IOPS on a EBS GP2 volume dependent on its size?
+    Answer: Yes, you get maximum of 16000 IOPS with 3 IOPS per GB.
+17. What kind of endpoints are exposed by Network Load Balancer?
+    Answer: Fixed IP.
+18. Can SSM Parameter Store rotate key?
+    Answer: It can't but AWS Secret Manager can.
+19. Is EFS backed by S3?
+    Answer: No
+20. How can you send logs from EC2 to Cloudwatch?
+    Answer: Using Cloudwatch Log Agents
+21. Cross-Zone load balancing default mechanism?
+    Answer: By default it is enabled for ALB, disabled for NLB.
+22. Is there a cost to create a placement group?
+    Answer: No
+23. How many concurrent executions are allowed by Lambda?
+    Answer: 1000. However, this is a soft limit. You can request more.
+24. Maximum memory that can be allocated to Lambda Functions?
+    Answer: 3008 MB
+25. How can you provide End-to-End encryption with Cloudfront?
+    Answer: Field level encryption.
+26. How long can a Lambda Function Run?
+    Answer: 15 minutes
+27. Can you attach an instance store volume after you have launched an instance?
+    Answer: No
+28. Block Device mapping works with?
+    Answer: EBS and Instance Store Volume
+29. When is S3 multi-part upload recommended?
+    Answer: Recommended for objects > 100 MB, Enforced at 5GB or more.
+30. Default visibility timeout of a SQS queue?
+    Answer: Default - 30 second, Minimum - 0 second, Maximum - 12 hours
+31. What does S3 transfer acceleration really excels at?
+    Answer: Increase upload speeds to S3 bucket.
+32. Which database provide near real-time performance and milisecond performance?
+    Answer: DynamoDB.
+33. Can you combine on-prem LDAP directory with IAM?
+    Answer: No
+34. The lowest cost Disaster Recovery approach?
+    Answer: Backup and Restore.
+35. CloudTrail offers which operations?
+    Answer: Data Events and Management events.
+36. Which metrics lambda tracks?
+    Answer: # of requests, # of failed requests, latency per request.
+37. What is an alternative to increase # of shards in Kinesis Data Streams?
+    Answer: Batching
+38. Can SES write to Kinesis Data Streams?
+    Answer: No
+39. Can AWS Lambda subscribe to SNS topic?
+    Answer: Yes.
+40. Eventbridge is similar to which services?
+    Answer: It is similar to SNS but really designed for SaaS services.
+41. What does S3 Storage class analysis gives recommendation to?
+    Answer: It only recommends from S3 Standard to S3 Standard IA.
+42. Which Load Balancers allow to register IP addresses as targets?
+    Answer: Application Load Balancer and Network Load Balancer.
+43. Does Elasticache for Memcached offer data persistence?
+    Answer: No
+44. Which database provides active-active configuration?
+    Answer: DynamoDB
+45. Is EFS fuuly managed and scalable?
+    Answer: Yes.
+46. Default permission of a S3 object?
+    Answer: Owned by the account that uploaded it.
+47. IAM authentication works with which database?
+    Answer: MySQL, and PostgreSQL.
+48. Can Elastic load balancers have security groups?
+    Answer: ALB and CLB can, NLB can't.
+49. Does S3 static website support HTTPS protocol?
+    Answer: No, needs to be combined with CloudFront.
+50. Can you bring your own IP address to Gloabal Accelerator?
+    Answer: Yes.
+51. By default ELB access logs is?
+    Answer: Disabled.
+52. What is the primary use of a NAT gateway?
+    Answer: To provide outbound internet access for EC2 instances deployed in private subnet.
+53. What is included with AMAZON ECS optimized AMI?
+    Answer: ECS container agent.
+54. How do you enable caching for API Gateway?
+    Answer: You enable it in a stage.
+55. The unique features that seperates Memcached from Redis?
+    Answer: Multi-threading and Engine Upgrade.
+56. Which load balancer allows pass-through?
+    Answer: Network Load Balancer.
+57. Storage Gateway vs EFS? Which is more durable?
+    Answer: Storage Gateway because it is backed by S3.
+58. If you terminate an ASG what happens to the running instances associated with ASG?
+    Answer: The instances are terminated.
+59. Why might an ASG not terminate unhealthy instances?
+    Answer:
+        - Health Check grace period might have expired.
+        - The instance might be in a impaired state.
+60. CloudFront vs Transfer Acceleration?
+    Answer: Cloudfront is good when distributing content with size less than a GB.
+61. By default which database is encrypted?
+    Answer: DynamoDB.
+62. Can ALBs be configured to do weighted routing?
+    Answer: Yes but applies to the same availability zone as the ALB.
+63. What does EBS optimization do?
+    Answer: It only optimizes Network Performance
+64. Origin Access Identity (OAI) works with?
+    Answer: S3.
+65. Does WAF work with Classic Load Balancer?
+    Answer: No
+66. Can SNS store messages?
+    Answer: No
+67. All memory related metrics for EC2 are what kind of metrics?
+    Answer: Custom metrics
+68. Why might an Instance immediately terminate?
+    Answer:
+        - EBS volume is maxed out.
+        - AMI is corrupt.
+        - EBS snapshot is corrupt.
+69. Maximum message size for SQS queue?
+    Answer: 256 KB
+70. How can you query instance meta-data?
+    Answer:
+        - Query Metadata tool
+        - http://169.254.169.254/latest/meta-data
+71. DB subnets groups are designed to be?
+    Answer: Private
+72. Elastic Beanstalk is what kind of service?
+    Answer: PaaS (Platform as a service)
+73. Maximum data retention days for SQS queue?
+    Answer: 14 days.
+74. Does DynamoDB have read replicas?
+    Answer: No
+75. Does AWS Compute Optimizer recommends purchasing options?
+    Answer: No
+76. What are the default configs supported by AWS VPC wizard?
+    Answer:
+        - Public Subnet Only
+        - Public and Private Subnet
+        - Public, Private, Site2Site VPN
+        - Private, Site2Site VPN
+77. When is using AWS Snowmobile recommended?
+    Answer: Transferring more than 10PB of data into a single location.
+78. S3 Transition Model?
+    Answer: S3 Standard => S3 Standard IA => S3 Intillegent Tiering => S3 One Zone IA => S3 Glacier => S3 Glacier Archive.
+79. How does a NLB distribute its traffic if the targets are registered with Instance IDs?
+    Answer: Primary Private IPv4.
+80. Site-to-Site VPN also known as?
+    Answer: IPSec VPN connection.
+81. Which Cloudformation features extends the functionality of stacks to create, update and delete stacks accross accounts and region?
+    Answer: Cloudformation StackSets.
+82. Which S3 storage class encryption by default?
+    Answer: Glacier.
+83. Which storage solutions are supported by Kinesis Firehose?
+    Answer: S3, Redshift, Elasticsearch, and Splunk.
+84. Which RDS solution is suitable for unpredicatable workload?
+    Answer: Aurora Serverless.
+85. Which service simplifies, automates, and accelerate copying large data to and from AWS storage services over internet or AWS Direct Connect?
+    Answer: AWS DataSync
+86. What option is used to postpone the delivery of certain messages to SQS queue?
+    Answer: Message Timer.
+87. What is the throughput limit of SQS FIFO queue?
+    Answer: 3000 Msgs/second with batching, 300 Msgs/second without batching.
+88. Which service you should use when you have multiple Site-to-Site VPNs or you wanna connect multiple On-prem network with a VPC?
+    Answer: VPN Cloudhub
+89. How can you easily identify AZs across accounts?
+    Answer: AZ IDs.
+90. Is S3 object metadata encrypted?
+    Answer: No
+91. Which AWS service allows you to migrate databases to AWS quickly?
+    Answer: AWS Database Migration Service (AWS DMS)
+92. Which Polling Mechanism of SQS queue reduce the cost?
+    Answer: Long Polling
+93. Can a CNAME record be created for a top-level domain?
+    Answer: NO.
+94. What service are compatible with S3 event notification?
+    Answer: SQS, SNS, and Lambda
+95. Amazon FSx for lusture works natively with which AWS storage?
+    Answer: S3
+96. Does Memcached provide with High Availability or Replication?
+    Answer: No
+97. How do you refer to resources in a Cloudformation Template?
+    Answer: By Logical IDs.
+98. What does Lambda need to know to connect to resources in a VPC?
+    Answer: VPC Subnets, VPC Security Groups.
+99. Is AWS Direct Connect encrypted?
+    Answer: It is not.
+100.Can Site-to-Site VPN offer low latency and high throughput connection?
+    Answer: No
+101. Which WElasticache is HIPPA eligible?
+     Answer: Redis.
+102. How can you share a VPC and manage centrally?
+     Answer: VPC Sharing.
+103. Can Elastic Load Balancer Buffer requests?
+     Answer: No
+104. How many IP addresses and Elastic IP a NAT Gateway can have?
+     Answer: One.
+105. What protocol does NAT Gateway support?
+     Answer: TCP, UDP, ICMP
+106. How long a Spot Block can be?
+     Answer: Between 1-6 Hours.
+107. Which EC2 placement group suitable for big data and distributed computing?
+     Answer: Partition Placement Group.
+108. Can Kinesis Agent write to both Streams and Firehose?
+     Answer: Yes.
+109. Connection Draining vs Deregistration Delay?
+     Answer: CLB - Connection Draining, ALB/NLB - Deregistration delay (Default 300 seconds, Maximum 3600 seconds)
+110. Which database doesn't support transparent data encryption?
+     Answer: PostgreSQL.
+111. Does SQS scales automatically?
+     Answer: Yes.
+112. How can you get EC2 metrics at a 1 min rate?
+     Answer: Detailed Monitoring.
+113. Do you need a virtual private gateway for AWS Direct connect?
+     Answer: Yes.
+114. Default cooldown period of ASG scaling?
+     Answer: 300 seconds.
+115. Storage Gateway File supports which filesystem?
+     Answer: NFS and SMB.
+116. Data Sync only works with?
+     Answer: EFS, S3, and FSx for Windows.
+117. EBS throughput optimized harddisk is good for?
+     Answer: Mapreduce, Kafka, Log Processing
+118. Min and Maximum CIDR size for a VPC?
+     Answer: Maximum - 2^16 , Minimum - 2^4
+119. When throttling is enabled, what happens if request submissions exceed the steady state request?
+     Answer: "429-Too Many Requests Error"
+120. What are S3 Glacier data retrieval options?
+     Answer: Expedited (1-5 Mins), Default ( 3-5 Hours), Bulk ( 5-12 Hours)
+121. DynamoDB best practices?
+     Answer:
+        - Keep item sizes small.
+        - Compress larger attributes value.
+        - Store more frequently and less frequently data stored in different tables.
+        - Store objects> 400 KB in S3 and use pointers
+122. Is there a Standard Metric for EC2 memeory usage?
+     Answer: No
+123. Which EC2 tenancy model is best for Server Bound licenses?
+     Answer: EC2 dedicated host.
+124. Does Direct Connect Gateway allows connection accross accounts?
+     Answer: No
+125. Which Load Balancer support mapping to multiple ports in a single instance?
+     Answer: Network Load Balancer
+126. How can you allow another account access your direct connect link?
+     Answer: Hosted Virtual Interface.
+127. What is SQS and SNS fan-out policy?
+     Answer: It is an way to replicate SNS messages to SQS queues.
+128. Elasticache Write-through caching strategy?
+     Answer: This strategy adds or updates data in the cache whenever data is
+     written to the database.
+129. Elasticache Eviction Policy?
+     Answer: Used for memory management.
+130. Does AWS Lambda work with Docker Contaienrs?
+     Answer: No
+131. Can Trusted Advisor renew reserved EC2 instances automatically?
+     Answer: No
+132. Does Cognito User Pool work with Cloudfront?
+     Answer: No
+133. Can you tranistion to S3 reduced redundancy from any class?
+     Answer: No
+134. Is there a de-register service with Amazon Guardduty?
+     Answer: No
+135. ASG Rebalancing strategy?
+     Answer: While rebalancing, ASG launches new instances and then terminates older instances.
+     However, in case of a scaling activity it will terminate an instance first and then launch.
+136. How many instances you can have per AZ per placement group?
+     Answer: 7
+137. Which languages are supported by Lambda run-times?
+     Answer: Java, Ruby, GO, Python, NodeJS, C#/.NET
+138. Can you modify a launch configuration once it has been created?
+     Answer: No
+139. How much storage is available in Snowball devices?
+     Answer: Snowball Optimized - 100 TB, Snowball - 80 TB
+140. Can API gateway create both stateless and stateful APIs?
+     Answer: Yes.
+141. S3 Prefix Performance?
+     Answer: Can get up to 5500 Get / Head requests per second per prefix.
+142. How is S3-Transfer Accelerator is priced?
+     Answer: You only pay for transfer that are accelerated.
+143. Does Kinesis Data Stream support retry mechanism?
+     Answer: Yes.
+144. Can SNS send messages to Kinesis Data Streams?
+     Answer: Yes.
+145. What are the available options with Guardduty to discontinue the service?
+     Answer: Disable or Suspend
+146. Does DynamoDB have security groups?
+     Answer: No
+147. How many route table a subnet can be associated with?
+     Answer: Only one subnet can be associated with one route table at a time.
+148. What are the requirements for using DMS to transfer data to Redshift?
+     Answer: 
+        - Have to be same account and region.
+        - First data gets moved to a S3 bucket.
+        - DMS replication must be in the same region.
+149. How long can the duration be SQS delay queues and Message Timers?
+     Answer: Between 0 seconds to 15 Miniutes.
+150. EC2 Tenancy Model Change policy after instance is launched?
+     Answer: You can only change tenancy from host to dedicate or vice-versa.
+151. Launch Configuration Tenancy?
+     Answer: 
+        - If VPC tenancy = "DEDICATED", every instances that are launched dedicated
+        - If launch config = "DEDICATED", instances will be dedicated.
+152. EBS encryption is done with the help of?
+     Answer: KMS
+153. When is AD connector recommended?
+     Answer: Only when you need your users from on-premise to log into AWS using AD credentials.
+154. When is AWS Managed AD is recommended?
+     Answer: 
+        - Good for more than 5K users.
+        - To set up trust relationships.
+        - Manage users both on prem and AWS
+155. Does Service Control policies apply to the root user?
+     Answer: Yes.
+156. Which is cheaper? Instance Stores or EBS?
+     Answer: Instance Store.
+157. What is AWS Step Functions?
+     Answer:
+        - Helps in orchestrating multiple AWS services including Lambda
+        - Allows executions in orders.
+158. Do you get charged for Route53 ALIAS record?
+     Answer: No
+159. Which scenario is good for Elasticache?
+     Answer: Real time performance.
+160. Does Network Load Balancer has security group?
+     Answer: No
+161. Does Direct Connect offer scheduled synchronization?
+     Answer: Yes
+162. Can you have Multi-AZ for your RDS Read replicas?
+     Answer: Yes
+163. Can security group be attached to CloudFront?
+     Answer: No
+164. Can you use WAF with NLB or CLB?
+     Answer: No
+165. Private docker image repositories are supported by which ECS type?
+     Answer: ECS EC2 launch type.
+166. What is another usage for Cloudwatch Log Agent other than retrieving System Logs?
+     Answer: You can retrieve System Metrics.
+167. Can you delete a root user account?
+     Answer: No
+168. How can you migrate database via Snowball Service?
+     Answer:
+        - You use the AWS Schema Conversion Tool (AWS SCT) to extract the data locally and move it to an Edge device.
+        - You ship the Edge device or devices back to AWS.
+        - After AWS receives your shipment, the Edge device automatically loads its data into an Amazon S3 bucket.
+        - AWS DMS takes the files and migrates the data to the target data store. If you are using change data capture (CDC), those updates are written to the Amazon S3 bucket 
+        and then applied to the target data store.
+169. How can you make programmatic calls to IAM?
+     Answer: 
+        - Use SDK with access Key ID / Secret Access Key
+        - Query API
+170. Is there any metric associated with Guardduty?
+     Answer: No
+171. AWS Batching good for which scenarios?
+     Answer:
+        - Good for multi node parallel job that spans multiple EC2 instances.
+        - Supports MPI, TensorFLow, Caffe2
+172. The maximum bandwith NAT Gateway offers?
+     Answer: 45 GBPS
+173. Which AWS service works with existing Chef cookbooks?
+     Answer: Chef Automate.
+174. Which EBS functionality helps with creation,retention, and deletion of EBS snapshots?
+     Answer: EBS Lifecycle Manager
+175. Can you delegate access IdP (Identity Provider) through IAM?
+     Answer: No
+176. Is there a route table entry for Direct Connect Gateway?
+     Answer: No
+177. How can you use IAM to authenticate with RDS MySQL?
+     Answer: AWSAuthenticationPlugin
+178. System Manager is primirily designed for?
+     Answer: Operational Tasks.
+179. Does Trusted Advisor show service limits?
+     Answer: Yes.
+180. Does Site-to-Site VPN need routing?
+     Answer: Yes.
+181. Can you combine resource TAGS with IAM to restrict access?
+     Answer: Yes.
+182. What are the valid types of SNS communication?
+     Answer: HTTP,HTTPS,EMAIL,JSON,SQS,SSM
+183. How can you copy data from EC2 instances to Redshift?
+     Answer: Use Redshift COPY command.
+184. AWS penetration testing?
+     Answer: By default, AWS allows penetration testing of 8 devices without prior authorization.
+185. Features of AWS Storage Gateway Hardware Appliance?
+     Answer:
+        - Software is pre-installed.
+        - You can manage from console/API.
+        - Supports file gateway (NFS/SMB)
+        - Supports Volume Gateway (Cached Volume)
+        - Supports Tape Gateway with iSCSI-VTL 
+        - Comes is 5TB or 12 TB
+        - Only one gateway at a time.
+        - Compliant with HIPPA.
+186. Which S3 storage class is supported by File Gateway?
+     Answer: Supports all S3 classes except Glacier.
+187. Which S3 storage class is supported by Tape Gateway?
+     Answer: Supports only S3 Standard and Glacier.
+188. What is the primary usage of SQS temporary queue?
+     Answer: Helps with common message patterns (Request/Response)
+189. Difference between Geolocation vs Geoproximity routing?
+     Answer: With geo-location, you serve traffic based on the location of the user. 
+     With geo-proximity, serve requests based on resources.
+190. Can you store data directly with Glacier?
+     Answer: Yes.
+191. On EFS, how can you restric access from hosts by user or group?
+     Answer: POSIX permission.
+192. EBS RAID configurations?
+     Answer:
+        - RAID configurations are achieved on OS level.
+        - RAID0 => Performance
+        - RAID1 => Redundancy
+193. Is S3 cross region replication transitive?
+     Answer: No
+194. How can you query S3 in place?
+     Answer: S3 select and Redshift Spectrum
+195. What is Cloudfront RTMP distribution?
+     Answer: Streaming Media using flash.
+196. What is the maximum size of a EC2 user data script?
+     Answer: 16 KB
+197. Does all EBS types support encryption?
+     Answer: Yes. All EC2 instance families do too but not all EC2 instance types.
+198. How can you make sure DNS resolution happening in VPC?
+     Answer: Make sure that enableDNSSupport and enableDNSHostname is turned on.
+199. Does Elasticache for REDIS offer Read Replica and Multi-AZ feature?
+     Answer: Yes.
+200. Is EMR serverless?
+     Answer: No, it is not. Requires you to provision resources.
+201. S3 vs EFS vs EBS pricing?
+     Answer:
+        - S3 Standard = $.023 /GB/Month
+        - EFS = $0.30 /GB/Month (Pay only for what you use)
+        - EBS = $0.10 /GB/Month (Pay for the whole provisioned amount)
+202. Major difference between launch configuration and template?
+     Answer: Template is newer and AWS recommends this for going forward. With launch template,
+     it will allow a mix of on-demand and spot instances.
+203. How does Cloudwatch sends an email when a metric threshold is reached?
+     Answer: It combines with a SNS topic.
+204. Secret Manager supports automatic key rotation with which services?
+     Answer: RDS, Redshift, and DocumentDB
+205. Does DocumentDB offer caching?
+     Answer: No
+206. Does EBS GP2 offer burstable IOPS?
+     Answer: Yes, 3000 IOPS.
+207. Can a single ASG span multiple region?
+     Answer: No
+208. Does AWS Database Migration Service (RDS) work with non databse service?
+     Answer: Yes. Works with S3, Kinesis, and Redshift
+
+
+
+Other Notes:
+1. NAT Gateway can only have one IP address.
+2. NAT Gateway only supports TCP,UDP, and ICMP
+3. Only one Elastic IP can be attached to the NAT Gateway.
+4. Elastic Load Balancer can't buffer requests.
+5. API Gateway, SQS and Kinesis can buffer or throttle.
+6. No cost to create a placement group.
+7. IPsec VPN also known as Sitr-to-Site VPN
+8. The minimum storage duration is 30 days before you can transition objects 
+from S3 Standard to S3 One Zone-IA or S3 Standard-IA.
+9. VPC sharing allows centrally managed VPCs
+10. Global Accelerator is a good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice over IP. 
+Therefore, this option is correct.
+11. SQS FIFO queues support up to 3,000 messages per second with batching, or up to 300 messages per second 
+(300 send, receive, or delete operations per second) without batching.
+12. You can't set up cognito with cloudfront
+13. Cloudfront doesn't belong to a vpc.
+14. Elasticache for Redis is HIPPA eligible.
+15. By default, cross-zone load balancing is enabled for Application Load Balancer and disabled for Network Load Balancer
+16. EC2 Reboot CloudWatch Alarm Action to reboot the instance.
+17. DynamoDB isn't a in-memory DB but combining it with DAX it can work as in-memory.
+18. When the new AMI is copied from region A into region B, it automatically creates a snapshot in region B because AMIs are based on the underlying snapshots.
+19. Site-to-site VPN cannot provide low latency and high throughput connection.
+20. AWS Direct Connect on its own can't provide encrypted traffic.
+21. Database Engine Level upgrade for both primary and stand by instance happens at the same time.
+22. 80 TB per snowball optimized storage.
+23. S3 Data Transfer is free.
+24. Firehose is managed data service whereas Streams is provisioned.
+25. ElastiCache for Memcached does not support replication and archival snapshots, so this option is ruled out.
+26. S3 Events notification don't work with SQS FIFO.
+27. For Elastic IP to be attached to our EC2 instance, 
+we must use an EC2 user data script, and our EC2 instance must have the correct 
+IAM permissions to perform the API call, so we need an EC2 instance role.
+28. Partition Placement Group is suited for Big Data, Apache Spark, Hadoop
+29. EFS IA is a thing.
+30. If the master database is encrypted, the read replicas are encrypted.
+31. S3 provides string read consistency for GET, PUT, and LIST operation.
+32. Read Replicas can be within an single AZ, cross AZ, and cross Region.
+33. RDS uses native asynchronous replication.
+34. If master DB is encrypted, then read replicas are encrypted.
+35. If master DB is not encrypted, read replicas can't be encrypted.
+36. EBS has delete on termination policy.
+37. You can only change the tenancy of an instance from dedicated to host, 
+or from host to dedicated after you've launched it.
+38. To migrate large datasets of 10PB or more in a single location, you should use Snowmobile. 
+For datasets less than 10PB or distributed in multiple locations, you should use Snowball.
+39. Applications can't consume data from Kinesis Firehose, it can only consume from
+Kinesis Data Streams.
+40. You can't create a CNAME record for top-level-domain.
+41. SCPs affect the root user as well.
+42. Data sync is good for high volume.
+43. Site to Site VPN is encrypted
+44. By default, basic monitoring is enabled when you create a launch template or when you use the AWS Management Console to create a launch configuration. 
+Detailed monitoring is enabled by default when you create a launch configuration using the AWS CLI or an SDK.
+45. Long Polling Reduces the cost of polling messages from SQS queue.
+46. S3 Object Meta Data is not encrypted.
+47. To coordinate Availability Zones across accounts, you must use the AZ ID, 
+which is a unique and consistent identifier for an Availability Zone.
+48. Kinesis Agent can write to both Kinessis Streams and Firehose.
+49. Using Cloudwatch Log Agents we can send EC2 logs to CloudWatch.
+50. EFS isn't backed by S3.
+51. Key rotation isn't avialble in SSM Parameter Store.
+52. SSM Parameter store is free but there is a limit 10K per account.
+53. Network Load Balancer exposes fixed IP address as an endpoint.
+54. Pre-signed URL doesn't work with S3.
+55. Athena isn't compatible with Glacier Storage class.
+56. By default, all DynamoDB tables are encrypted under an AWS owned customer master key (CMK), 
+which do not write to CloudTrail logs.
